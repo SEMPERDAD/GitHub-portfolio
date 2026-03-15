@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Portfolio</title>
+  <meta name="description" content="Software engineer focused on workflow orchestration, automation, and building maintainable systems." />
+  <meta property="og:title" content="GitHub Portfolio" />
+  <meta property="og:description" content="Software engineer focused on workflow orchestration, automation, and building maintainable systems." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="GitHub Portfolio" />
+  <meta name="twitter:description" content="Software engineer focused on workflow orchestration, automation, and building maintainable systems." />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <span class="nav-brand">Portfolio</span>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <h1 id="hero-heading">Software Engineer</h1>
+        <p class="hero-tagline">Building reliable systems through thoughtful workflow orchestration and automation.</p>
+        <a href="https://github.com/SEMPERDAD" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          View GitHub Profile
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About</h2>
+        <p class="about-text">
+          I build systems that are easy to reason about, maintain, and extend. My focus is on workflow
+          orchestration — designing processes where each step is clear, reversible where possible, and
+          verifiable before moving on. I believe the best engineering is invisible: it just works, and
+          when it breaks, it breaks loudly and obviously.
+        </p>
+        <p class="about-text">
+          I care deeply about minimal-impact changes, avoiding over-engineering, and capturing lessons
+          so the same mistake never happens twice. Good systems are built iteratively, with honest
+          feedback loops at every level.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-alt" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading">Projects</h2>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <h3 class="project-title">GitHub Portfolio</h3>
+            <p class="project-desc">
+              This site itself — a static portfolio with a built-in workflow orchestration system.
+              Task tracking, lessons-learned logging, and a clear build sequence baked into the repo.
+            </p>
+            <ul class="tech-tags" aria-label="Technologies used">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>GitHub Pages</li>
+            </ul>
+            <a href="https://github.com/SEMPERDAD/GitHub-portfolio" class="project-link" target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-title">Workflow Orchestration Engine</h3>
+            <p class="project-desc">
+              A lightweight task orchestration framework built around the principle of explicit state
+              transitions. Each node declares its preconditions and postconditions, enabling automatic
+              replanning when steps fail.
+            </p>
+            <ul class="tech-tags" aria-label="Technologies used">
+              <li>Python</li>
+              <li>YAML</li>
+              <li>CLI</li>
+              <li>DAG</li>
+            </ul>
+            <a href="https://github.com/SEMPERDAD" class="project-link" target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-title">Automated CI/CD Pipeline</h3>
+            <p class="project-desc">
+              End-to-end GitHub Actions pipeline with staged gates: lint, test, build, deploy.
+              Each stage is independently rerunnable and produces structured logs for fast debugging.
+            </p>
+            <ul class="tech-tags" aria-label="Technologies used">
+              <li>GitHub Actions</li>
+              <li>Docker</li>
+              <li>Shell</li>
+              <li>YAML</li>
+            </ul>
+            <a href="https://github.com/SEMPERDAD" class="project-link" target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading">Skills</h2>
+        <ul class="skills-list" role="list" aria-label="Technical skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Git</li>
+          <li>GitHub Actions</li>
+          <li>Docker</li>
+          <li>Shell Scripting</li>
+          <li>YAML</li>
+          <li>REST APIs</li>
+          <li>SQL</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="site-footer" aria-labelledby="contact-heading">
+    <div class="container">
+      <h2 id="contact-heading" class="footer-heading">Get In Touch</h2>
+      <p class="footer-text">Open to collaboration, interesting problems, and building things that matter.</p>
+      <a href="https://github.com/SEMPERDAD" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+        GitHub Profile
+      </a>
+      <p class="footer-copy">&copy; 2026 GitHub Portfolio. Built with plain HTML, CSS, and JS.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
