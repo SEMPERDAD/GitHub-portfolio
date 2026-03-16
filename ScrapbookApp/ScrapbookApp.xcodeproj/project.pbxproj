@@ -20,7 +20,6 @@
 		AA000011 /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* InviteView.swift */; };
 		AA000012 /* PrintPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* PrintPreviewView.swift */; };
 		AA000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB000013 /* Assets.xcassets */; };
-		AA000014 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB000014 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA000013 /* Assets.xcassets in Resources */,
-				AA000014 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
