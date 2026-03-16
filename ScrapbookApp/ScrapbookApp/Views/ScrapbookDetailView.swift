@@ -8,6 +8,7 @@ struct ScrapbookDetailView: View {
     @State private var showingInvite = false
     @State private var showingPrint = false
     @State private var showingPhotoPicker = false
+    @State private var showingTemplatePicker = false
     @State private var isEditing = false
 
     private var currentBook: Scrapbook {
@@ -57,8 +58,7 @@ struct ScrapbookDetailView: View {
 
             ToolbarItemGroup(placement: .bottomBar) {
                 Button {
-                    store.addPage(to: currentBook.id)
-                    selectedPageIndex = currentBook.pages.count - 1
+                    showingTemplatePicker = true
                 } label: {
                     Label("Add Page", systemImage: "plus.rectangle.on.rectangle")
                 }
@@ -77,6 +77,13 @@ struct ScrapbookDetailView: View {
             if currentBook.pages.indices.contains(selectedPageIndex) {
                 PhotoPickerView(pageId: currentBook.pages[selectedPageIndex].id, bookId: currentBook.id)
             }
+        }
+        .sheet(isPresented: $showingTemplatePicker) {
+            TemplatePickerView { template in
+                store.addPage(to: currentBook.id, template: template)
+                selectedPageIndex = currentBook.pages.count - 1
+            }
+            .presentationDetents([.large])
         }
         .sheet(isPresented: $showingInvite) {
             InviteView(scrapbook: currentBook)

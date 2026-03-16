@@ -21,6 +21,8 @@
 		AA000012 /* PrintPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* PrintPreviewView.swift */; };
 		AA000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB000013 /* Assets.xcassets */; };
 		AA000014 /* ScrapbookLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000015 /* ScrapbookLogoView.swift */; };
+		AA000015 /* PageTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000016 /* PageTemplate.swift */; };
+		AA000016 /* TemplatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000017 /* TemplatePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		AB000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB000015 /* ScrapbookLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookLogoView.swift; sourceTree = "<group>"; };
+		AB000016 /* PageTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTemplate.swift; sourceTree = "<group>"; };
+		AB000017 /* TemplatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -70,6 +74,7 @@
 				AB000003 /* Scrapbook.swift */,
 				AB000004 /* ScrapbookPage.swift */,
 				AB000005 /* ScrapbookUser.swift */,
+				AB000016 /* PageTemplate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 				AB000011 /* InviteView.swift */,
 				AB000012 /* PrintPreviewView.swift */,
 				AB000015 /* ScrapbookLogoView.swift */,
+				AB000017 /* TemplatePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				AA000011 /* InviteView.swift in Sources */,
 				AA000012 /* PrintPreviewView.swift in Sources */,
 				AA000014 /* ScrapbookLogoView.swift in Sources */,
+				AA000015 /* PageTemplate.swift in Sources */,
+				AA000016 /* TemplatePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

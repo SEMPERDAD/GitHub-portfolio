@@ -53,6 +53,14 @@ class ScrapbookStore: ObservableObject {
         saveScrapbooks()
     }
 
+    func addPage(to bookId: UUID, template: PageTemplate) {
+        guard let idx = scrapbooks.firstIndex(where: { $0.id == bookId }) else { return }
+        let pageNumber = scrapbooks[idx].pages.count + 1
+        scrapbooks[idx].pages.append(template.makePage(title: "Page \(pageNumber)"))
+        scrapbooks[idx].updatedAt = Date()
+        saveScrapbooks()
+    }
+
     func deletePage(_ page: ScrapbookPage, from bookId: UUID) {
         guard let bookIdx = scrapbooks.firstIndex(where: { $0.id == bookId }) else { return }
         scrapbooks[bookIdx].pages.removeAll { $0.id == page.id }
