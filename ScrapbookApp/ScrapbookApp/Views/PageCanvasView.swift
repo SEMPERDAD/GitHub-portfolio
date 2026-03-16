@@ -149,11 +149,11 @@ struct ScrapbookItemView: View {
         }
         .background(.white)
         .shadow(color: .black.opacity(0.2), radius: 4, x: 1, y: 2)
-        .overlay(
-            item.borderStyle == .polaroid
-            ? RoundedRectangle(cornerRadius: 2).stroke(.white, lineWidth: 6)
-            : nil
-        )
+        .overlay {
+            if item.borderStyle == .polaroid {
+                RoundedRectangle(cornerRadius: 2).stroke(.white, lineWidth: 6)
+            }
+        }
     }
 
     private var textItemView: some View {
@@ -227,12 +227,12 @@ struct ScrapbookItemView: View {
         MagnificationGesture()
             .onChanged { value in
                 guard isEditing else { return }
-                scale = item.scale * value
+                scale = item.scale * Double(value)
             }
             .onEnded { value in
                 guard isEditing else { return }
                 var updated = item
-                updated.scale = item.scale * value
+                updated.scale = item.scale * Double(value)
                 onUpdate(updated)
             }
     }
