@@ -28,6 +28,13 @@
 	<string>Scrapbook needs access to your photo library so you can import photos into your scrapbooks.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Scrapbook can save your scrapbook pages to your photo library.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Scrapbook uses your local network to collaborate with nearby users in real time.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_scrapbook-sync._tcp</string>
+		<string>_scrapbook-sync._udp</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

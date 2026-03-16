@@ -7,43 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA000001 /* ScrapbookAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000001 /* ScrapbookAppApp.swift */; };
-		AA000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000002 /* ContentView.swift */; };
-		AA000003 /* Scrapbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000003 /* Scrapbook.swift */; };
-		AA000004 /* ScrapbookPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000004 /* ScrapbookPage.swift */; };
-		AA000005 /* ScrapbookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000005 /* ScrapbookUser.swift */; };
-		AA000006 /* ScrapbookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000006 /* ScrapbookStore.swift */; };
-		AA000007 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000007 /* HomeView.swift */; };
-		AA000008 /* ScrapbookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000008 /* ScrapbookDetailView.swift */; };
-		AA000009 /* PageCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000009 /* PageCanvasView.swift */; };
-		AA000010 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000010 /* PhotoPickerView.swift */; };
-		AA000011 /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* InviteView.swift */; };
+		AA000001 /* ScrapBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000001 /* ScrapBookApp.swift */; };
+		AA000002 /* ScrapbookModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000002 /* ScrapbookModels.swift */; };
+		AA000003 /* CollaborationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000003 /* CollaborationService.swift */; };
+		AA000004 /* AirDropService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000004 /* AirDropService.swift */; };
+		AA000005 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000005 /* PersistenceService.swift */; };
+		AA000006 /* PrintService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000006 /* PrintService.swift */; };
+		AA000007 /* TemplateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000007 /* TemplateFactory.swift */; };
+		AA000008 /* ScrapbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000008 /* ScrapbookViewModel.swift */; };
+		AA000009 /* ProjectGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000009 /* ProjectGalleryView.swift */; };
+		AA000010 /* ScrapbookLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000010 /* ScrapbookLogoView.swift */; };
+		AA000011 /* ScrapbookEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* ScrapbookEditorView.swift */; };
 		AA000012 /* PrintPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* PrintPreviewView.swift */; };
-		AA000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB000013 /* Assets.xcassets */; };
-		AA000014 /* ScrapbookLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000015 /* ScrapbookLogoView.swift */; };
-		AA000015 /* PageTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000016 /* PageTemplate.swift */; };
-		AA000016 /* TemplatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000017 /* TemplatePickerView.swift */; };
+		AA000013 /* PageNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000013 /* PageNavigatorView.swift */; };
+		AA000014 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000014 /* ElementView.swift */; };
+		AA000015 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000015 /* PhotoPickerView.swift */; };
+		AA000016 /* TemplatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000016 /* TemplatePickerView.swift */; };
+		AA000017 /* CollaborationPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000017 /* CollaborationPanelView.swift */; };
+		AA000018 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000018 /* View+Extensions.swift */; };
+		AA000019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB000019 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB000000 /* ScrapbookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapbookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB000001 /* ScrapbookAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookAppApp.swift; sourceTree = "<group>"; };
-		AB000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AB000003 /* Scrapbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrapbook.swift; sourceTree = "<group>"; };
-		AB000004 /* ScrapbookPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookPage.swift; sourceTree = "<group>"; };
-		AB000005 /* ScrapbookUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookUser.swift; sourceTree = "<group>"; };
-		AB000006 /* ScrapbookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookStore.swift; sourceTree = "<group>"; };
-		AB000007 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		AB000008 /* ScrapbookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookDetailView.swift; sourceTree = "<group>"; };
-		AB000009 /* PageCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCanvasView.swift; sourceTree = "<group>"; };
-		AB000010 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
-		AB000011 /* InviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteView.swift; sourceTree = "<group>"; };
+		AB000001 /* ScrapBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookApp.swift; sourceTree = "<group>"; };
+		AB000002 /* ScrapbookModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookModels.swift; sourceTree = "<group>"; };
+		AB000003 /* CollaborationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationService.swift; sourceTree = "<group>"; };
+		AB000004 /* AirDropService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDropService.swift; sourceTree = "<group>"; };
+		AB000005 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		AB000006 /* PrintService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintService.swift; sourceTree = "<group>"; };
+		AB000007 /* TemplateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFactory.swift; sourceTree = "<group>"; };
+		AB000008 /* ScrapbookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookViewModel.swift; sourceTree = "<group>"; };
+		AB000009 /* ProjectGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGalleryView.swift; sourceTree = "<group>"; };
+		AB000010 /* ScrapbookLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookLogoView.swift; sourceTree = "<group>"; };
+		AB000011 /* ScrapbookEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookEditorView.swift; sourceTree = "<group>"; };
 		AB000012 /* PrintPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintPreviewView.swift; sourceTree = "<group>"; };
-		AB000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AB000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB000015 /* ScrapbookLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookLogoView.swift; sourceTree = "<group>"; };
-		AB000016 /* PageTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTemplate.swift; sourceTree = "<group>"; };
-		AB000017 /* TemplatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePickerView.swift; sourceTree = "<group>"; };
+		AB000013 /* PageNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageNavigatorView.swift; sourceTree = "<group>"; };
+		AB000014 /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
+		AB000015 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
+		AB000016 /* TemplatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePickerView.swift; sourceTree = "<group>"; };
+		AB000017 /* CollaborationPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationPanelView.swift; sourceTree = "<group>"; };
+		AB000018 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		AB000019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB000020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -58,12 +64,14 @@
 		AC000002 /* ScrapbookApp */ = {
 			isa = PBXGroup;
 			children = (
-				AB000001 /* ScrapbookAppApp.swift */,
-				AB000002 /* ContentView.swift */,
+				AB000001 /* ScrapBookApp.swift */,
 				AC000003 /* Models */,
-				AC000004 /* ViewModels */,
-				AC000005 /* Views */,
-				AC000006 /* Resources */,
+				AC000004 /* Services */,
+				AC000005 /* Templates */,
+				AC000006 /* ViewModels */,
+				AC000007 /* Views */,
+				AC000013 /* Extensions */,
+				AC000014 /* Resources */,
 			);
 			path = ScrapbookApp;
 			sourceTree = "<group>";
@@ -71,42 +79,107 @@
 		AC000003 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AB000003 /* Scrapbook.swift */,
-				AB000004 /* ScrapbookPage.swift */,
-				AB000005 /* ScrapbookUser.swift */,
-				AB000016 /* PageTemplate.swift */,
+				AB000002 /* ScrapbookModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AC000004 /* ViewModels */ = {
+		AC000004 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AB000006 /* ScrapbookStore.swift */,
+				AB000003 /* CollaborationService.swift */,
+				AB000004 /* AirDropService.swift */,
+				AB000005 /* PersistenceService.swift */,
+				AB000006 /* PrintService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AC000005 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				AB000007 /* TemplateFactory.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		AC000006 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AB000008 /* ScrapbookViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		AC000005 /* Views */ = {
+		AC000007 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB000007 /* HomeView.swift */,
-				AB000008 /* ScrapbookDetailView.swift */,
-				AB000009 /* PageCanvasView.swift */,
-				AB000010 /* PhotoPickerView.swift */,
-				AB000011 /* InviteView.swift */,
-				AB000012 /* PrintPreviewView.swift */,
-				AB000015 /* ScrapbookLogoView.swift */,
-				AB000017 /* TemplatePickerView.swift */,
+				AC000008 /* Gallery */,
+				AC000009 /* Editor */,
+				AC000010 /* Components */,
+				AC000011 /* Templates */,
+				AC000012 /* Collaboration */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		AC000006 /* Resources */ = {
+		AC000008 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				AB000013 /* Assets.xcassets */,
-				AB000014 /* Info.plist */,
+				AB000009 /* ProjectGalleryView.swift */,
+				AB000010 /* ScrapbookLogoView.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		AC000009 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				AB000011 /* ScrapbookEditorView.swift */,
+				AB000012 /* PrintPreviewView.swift */,
+				AB000013 /* PageNavigatorView.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		AC000010 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AB000014 /* ElementView.swift */,
+				AB000015 /* PhotoPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AC000011 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				AB000016 /* TemplatePickerView.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		AC000012 /* Collaboration */ = {
+			isa = PBXGroup;
+			children = (
+				AB000017 /* CollaborationPanelView.swift */,
+			);
+			path = Collaboration;
+			sourceTree = "<group>";
+		};
+		AC000013 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB000018 /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC000014 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB000019 /* Assets.xcassets */,
+				AB000020 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -177,7 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA000013 /* Assets.xcassets in Resources */,
+				AA000019 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,21 +261,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA000001 /* ScrapbookAppApp.swift in Sources */,
-				AA000002 /* ContentView.swift in Sources */,
-				AA000003 /* Scrapbook.swift in Sources */,
-				AA000004 /* ScrapbookPage.swift in Sources */,
-				AA000005 /* ScrapbookUser.swift in Sources */,
-				AA000006 /* ScrapbookStore.swift in Sources */,
-				AA000007 /* HomeView.swift in Sources */,
-				AA000008 /* ScrapbookDetailView.swift in Sources */,
-				AA000009 /* PageCanvasView.swift in Sources */,
-				AA000010 /* PhotoPickerView.swift in Sources */,
-				AA000011 /* InviteView.swift in Sources */,
+				AA000001 /* ScrapBookApp.swift in Sources */,
+				AA000002 /* ScrapbookModels.swift in Sources */,
+				AA000003 /* CollaborationService.swift in Sources */,
+				AA000004 /* AirDropService.swift in Sources */,
+				AA000005 /* PersistenceService.swift in Sources */,
+				AA000006 /* PrintService.swift in Sources */,
+				AA000007 /* TemplateFactory.swift in Sources */,
+				AA000008 /* ScrapbookViewModel.swift in Sources */,
+				AA000009 /* ProjectGalleryView.swift in Sources */,
+				AA000010 /* ScrapbookLogoView.swift in Sources */,
+				AA000011 /* ScrapbookEditorView.swift in Sources */,
 				AA000012 /* PrintPreviewView.swift in Sources */,
-				AA000014 /* ScrapbookLogoView.swift in Sources */,
-				AA000015 /* PageTemplate.swift in Sources */,
+				AA000013 /* PageNavigatorView.swift in Sources */,
+				AA000014 /* ElementView.swift in Sources */,
+				AA000015 /* PhotoPickerView.swift in Sources */,
 				AA000016 /* TemplatePickerView.swift in Sources */,
+				AA000017 /* CollaborationPanelView.swift in Sources */,
+				AA000018 /* View+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
