@@ -4,6 +4,7 @@ import SwiftUI
 struct PageNavigatorView: View {
     let pages: [ScrapbookPage]
     @Binding var selectedIndex: Int
+    var onDelete: ((Int) -> Void)? = nil
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -19,6 +20,15 @@ struct PageNavigatorView: View {
                             .background(selectedIndex == idx ? Color.pink : Color(.systemGray5))
                             .foregroundStyle(selectedIndex == idx ? .white : .primary)
                             .clipShape(Capsule())
+                    }
+                    .contextMenu {
+                        if let onDelete, pages.count > 1 {
+                            Button(role: .destructive) {
+                                onDelete(idx)
+                            } label: {
+                                Label("Delete Page", systemImage: "trash")
+                            }
+                        }
                     }
                 }
             }

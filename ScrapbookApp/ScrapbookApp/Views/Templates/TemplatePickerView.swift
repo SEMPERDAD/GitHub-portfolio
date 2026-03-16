@@ -11,8 +11,10 @@ struct TemplatePickerView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(PageTemplate.all) { template in
-                        TemplateCard(template: template)
-                            .onTapGesture { onSelect(template); dismiss() }
+                        Button { onSelect(template); dismiss() } label: {
+                            TemplateCard(template: template)
+                        }
+                        .buttonStyle(TemplateCardButtonStyle())
                     }
                 }
                 .padding(16)
@@ -32,9 +34,16 @@ struct TemplatePickerView: View {
 
 // MARK: - Card
 
+private struct TemplateCardButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .animation(.spring(response: 0.2, dampingFraction: 0.7), value: configuration.isPressed)
+    }
+}
+
 private struct TemplateCard: View {
     let template: PageTemplate
-    @State private var pressed = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -53,10 +62,6 @@ private struct TemplateCard: View {
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .shadow(color: Color(red: 0.6, green: 0.4, blue: 0.5).opacity(0.10), radius: 8, x: 0, y: 4)
-        .scaleEffect(pressed ? 0.95 : 1.0)
-        .animation(.spring(response: 0.2, dampingFraction: 0.7), value: pressed)
-        .onLongPressGesture(minimumDuration: 0, maximumDistance: .infinity,
-                            pressing: { pressed = $0 }, perform: {})
     }
 }
 

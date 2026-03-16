@@ -18,7 +18,13 @@ struct ScrapbookEditorView: View {
     var body: some View {
         VStack(spacing: 0) {
             if currentBook.pages.count > 1 {
-                PageNavigatorView(pages: currentBook.pages, selectedIndex: $selectedPageIndex)
+                PageNavigatorView(pages: currentBook.pages, selectedIndex: $selectedPageIndex) { idx in
+                    let page = currentBook.pages[idx]
+                    viewModel.deletePage(page, from: currentBook.id)
+                    if selectedPageIndex >= currentBook.pages.count - 1 {
+                        selectedPageIndex = max(0, currentBook.pages.count - 2)
+                    }
+                }
             }
 
             if currentBook.pages.indices.contains(selectedPageIndex) {

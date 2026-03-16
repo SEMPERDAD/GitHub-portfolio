@@ -104,6 +104,17 @@ struct ElementView: View {
             .gesture(rotationGesture)
             .gesture(magnificationGesture)
             .onTapGesture { if isEditing { onSelect() } }
+            .onChange(of: isSelected) { _, newValue in if !newValue { saveCaption() } }
+            .onChange(of: isEditing)  { _, newValue in if !newValue { saveCaption() } }
+    }
+
+    private func saveCaption() {
+        guard item.type == .photo else { return }
+        let newCaption = captionText.isEmpty ? nil : captionText
+        guard newCaption != item.caption else { return }
+        var updated = item
+        updated.caption = newCaption
+        onUpdate(updated)
     }
 
     @ViewBuilder
@@ -134,12 +145,21 @@ struct ElementView: View {
                 Rectangle()
                     .fill(.white)
                     .frame(width: CGFloat(item.width), height: 44)
-                    .overlay(
-                        Text(captionText.isEmpty ? "" : captionText)
-                            .font(.system(.caption, design: .rounded))
-                            .foregroundStyle(.black.opacity(0.7))
-                            .padding(.horizontal, 4)
-                    )
+                    .overlay {
+                        if isSelected && isEditing {
+                            TextField("Add caption...", text: $captionText)
+                                .font(.system(.caption, design: .rounded))
+                                .foregroundStyle(.black.opacity(0.85))
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 8)
+                                .onSubmit { saveCaption() }
+                        } else {
+                            Text(captionText.isEmpty ? "" : captionText)
+                                .font(.system(.caption, design: .rounded))
+                                .foregroundStyle(.black.opacity(0.7))
+                                .padding(.horizontal, 4)
+                        }
+                    }
             }
         }
         .background(.white)
