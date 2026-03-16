@@ -141,7 +141,7 @@ struct ScrapbookItemView: View {
                     .frame(width: CGFloat(item.width), height: 44)
                     .overlay(
                         Text(captionText.isEmpty ? "" : captionText)
-                            .font(.system(.caption, design: .handwriting))
+                            .font(.system(.caption, design: .rounded))
                             .foregroundStyle(.black.opacity(0.7))
                             .padding(.horizontal, 4)
                     )
@@ -158,7 +158,7 @@ struct ScrapbookItemView: View {
 
     private var textItemView: some View {
         Text(item.text ?? "Tap to edit")
-            .font(.system(.body, design: .handwriting))
+            .font(.system(.body, design: .rounded))
             .padding(8)
             .frame(minWidth: 80)
             .background(.white.opacity(0.85))
