@@ -20,6 +20,7 @@
 		AA000011 /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* InviteView.swift */; };
 		AA000012 /* PrintPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* PrintPreviewView.swift */; };
 		AA000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB000013 /* Assets.xcassets */; };
+		AA000014 /* ScrapbookLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000015 /* ScrapbookLogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AB000012 /* PrintPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintPreviewView.swift; sourceTree = "<group>"; };
 		AB000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB000015 /* ScrapbookLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookLogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -89,6 +91,7 @@
 				AB000010 /* PhotoPickerView.swift */,
 				AB000011 /* InviteView.swift */,
 				AB000012 /* PrintPreviewView.swift */,
+				AB000015 /* ScrapbookLogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				AA000010 /* PhotoPickerView.swift in Sources */,
 				AA000011 /* InviteView.swift in Sources */,
 				AA000012 /* PrintPreviewView.swift in Sources */,
+				AA000014 /* ScrapbookLogoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
