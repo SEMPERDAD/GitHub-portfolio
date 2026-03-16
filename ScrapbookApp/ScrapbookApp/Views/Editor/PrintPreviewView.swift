@@ -134,7 +134,9 @@ struct PrintPreviewView: View {
     private func savePDF() {
         let images = selectedPhotos.compactMap { $0.photo.image }
         let opts = PrintService.Options(photosPerPage: photosPerPage, jobName: scrapbook.title)
-        printer.savePDFAndShare(images, named: scrapbook.title, options: opts)
+        Task { @MainActor in
+            printer.savePDFAndShare(images, named: scrapbook.title, options: opts)
+        }
     }
 }
 

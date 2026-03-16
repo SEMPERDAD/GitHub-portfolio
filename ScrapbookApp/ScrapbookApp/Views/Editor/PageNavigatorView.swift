@@ -31,6 +31,12 @@ struct PageNavigatorView: View {
 }
 
 #Preview {
-    let pages = [ScrapbookPage(title: "Page 1"), ScrapbookPage(title: "Page 2")]
-    PageNavigatorView(pages: pages, selectedIndex: .constant(0))
+    struct Preview: View {
+        @State var index = 0
+        let pages = [ScrapbookPage(title: "Page 1"), ScrapbookPage(title: "Page 2")]
+        var body: some View {
+            PageNavigatorView(pages: pages, selectedIndex: $index)
+        }
+    }
+    return Preview()
 }
