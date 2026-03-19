@@ -1,0 +1,24 @@
+{
+  "name": "modular-pos-system",
+  "version": "1.0.0",
+  "description": "Enterprise-grade modular POS system — integrable into any platform via REST API, embeddable UI, or SDK",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "sdk"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=frontend && npm run build --workspace=sdk",
+    "test": "npm run test --workspaces --if-present",
+    "seed": "npm run seed --workspace=backend",
+    "start": "npm run start --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

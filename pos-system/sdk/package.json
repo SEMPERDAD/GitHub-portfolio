@@ -1,0 +1,13 @@
+{
+  "name": "@pos/sdk",
+  "version": "1.0.0",
+  "description": "POS System Integration SDK — embed the POS into any web application",
+  "main": "src/index.js",
+  "module": "src/index.esm.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": ["pos", "point-of-sale", "sdk", "integration", "retail"],
+  "license": "MIT"
+}

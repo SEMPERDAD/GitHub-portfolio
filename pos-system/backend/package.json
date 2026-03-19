@@ -1,0 +1,30 @@
+{
+  "name": "@pos/backend",
+  "version": "1.0.0",
+  "description": "POS System REST API — Express + SQLite (swappable to PostgreSQL/MySQL)",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "seed": "node src/database/seed.js",
+    "test": "jest --testPathPattern=src"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "express-rate-limit": "^7.2.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^6.3.4"
+  }
+}

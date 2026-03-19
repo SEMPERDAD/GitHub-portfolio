@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS System</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --bg: #0f172a; --surface: #1e293b; --surface2: #273549;
+        --border: #334155; --text: #f1f5f9; --muted: #94a3b8;
+        --accent: #6366f1; --accent-hover: #4f46e5;
+        --green: #10b981; --red: #ef4444; --yellow: #f59e0b;
+        --radius: 10px; --radius-sm: 6px;
+      }
+      body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); height: 100vh; overflow: hidden; }
+      #root { height: 100vh; display: flex; flex-direction: column; }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--surface); }
+      ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+      button { font-family: inherit; cursor: pointer; border: none; }
+      input, select, textarea { font-family: inherit; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
