@@ -102,7 +102,7 @@ struct BulkApplyView: View {
 
     var previewSection: some View {
         Section("Preview") {
-            ForEach(selectedList) { job in
+            ForEach(selectedList, id: \.id) { job in
                 Button {
                     showingPreview = job
                 } label: {
@@ -112,7 +112,7 @@ struct BulkApplyView: View {
                             Text(job.company).font(.caption).foregroundStyle(.secondary)
                         }
                         Spacer()
-                        Image(systemName: "eye").foregroundStyle(.accentColor)
+                        Image(systemName: "eye").foregroundStyle(Color.accentColor)
                     }
                 }
                 .foregroundStyle(.primary)
@@ -169,7 +169,7 @@ struct SelectableJobRow: View {
         Button(action: onTap) {
             HStack(spacing: 12) {
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(isSelected ? .accentColor : .secondary)
+                    .foregroundStyle(isSelected ? Color.accentColor : Color.secondary)
                     .font(.title3)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(job.position).font(.subheadline.bold())
