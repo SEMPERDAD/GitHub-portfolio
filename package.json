@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "remotion studio",
-    "build": "remotion render ClaudeSkillsVideo out/claude-skills-video.mp4",
-    "render": "remotion render ClaudeSkillsVideo out/claude-skills-video.mp4",
+    "build": "remotion render ClaudeSkillsVideo out/claude-skills-video.mp4 --browser-executable=/root/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell --gl=swiftshader",
+    "render": "remotion render ClaudeSkillsVideo out/claude-skills-video.mp4 --browser-executable=/root/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell --gl=swiftshader",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
