@@ -56,10 +56,12 @@ struct BulkApplyView: View {
         Section {
             ForEach(store.jobs) { job in
                 SelectableJobRow(job: job, isSelected: selectedJobs.contains(job.id)) {
-                    if selectedJobs.contains(job.id) {
-                        selectedJobs.remove(job.id)
-                    } else {
-                        selectedJobs.insert(job.id)
+                    withAnimation(.easeOut(duration: 0.15)) {
+                        if selectedJobs.contains(job.id) {
+                            selectedJobs.remove(job.id)
+                        } else {
+                            selectedJobs.insert(job.id)
+                        }
                     }
                 }
             }
@@ -69,18 +71,29 @@ struct BulkApplyView: View {
                 Spacer()
                 if !store.jobs.isEmpty {
                     Button(selectedJobs.count == store.jobs.count ? "Deselect All" : "Select All") {
-                        if selectedJobs.count == store.jobs.count {
-                            selectedJobs.removeAll()
-                        } else {
-                            selectedJobs = Set(store.jobs.map(\.id))
+                        withAnimation {
+                            if selectedJobs.count == store.jobs.count {
+                                selectedJobs.removeAll()
+                            } else {
+                                selectedJobs = Set(store.jobs.map(\.id))
+                            }
                         }
                     }
-                    .font(.caption)
+                    .font(.caption.bold())
+                    .foregroundStyle(Brand.violet)
                     .textCase(nil)
                 }
             }
         } footer: {
-            Text("\(selectedJobs.count) of \(store.jobs.count) selected")
+            if !store.jobs.isEmpty {
+                HStack(spacing: 4) {
+                    Text("\(selectedJobs.count)")
+                        .foregroundStyle(Brand.violet)
+                        .fontWeight(.semibold)
+                    Text("of \(store.jobs.count) selected")
+                }
+                .font(.caption)
+            }
         }
     }
 
@@ -90,7 +103,7 @@ struct BulkApplyView: View {
                 .frame(minHeight: 100)
                 .overlay(alignment: .topLeading) {
                     if customParagraph.isEmpty {
-                        Text("Add a personal touch for this batch of applications…")
+                        Text("Add a personal touch for this batch…")
                             .foregroundStyle(.tertiary)
                             .padding(.top, 8)
                             .padding(.leading, 4)
@@ -101,18 +114,21 @@ struct BulkApplyView: View {
     }
 
     var previewSection: some View {
-        Section("Preview") {
+        Section("Preview Cover Letters") {
             ForEach(selectedList, id: \.id) { job in
                 Button {
                     showingPreview = job
                 } label: {
-                    HStack {
-                        VStack(alignment: .leading) {
+                    HStack(spacing: 12) {
+                        CompanyAvatar(name: job.company, size: 36)
+                        VStack(alignment: .leading, spacing: 2) {
                             Text(job.position).font(.subheadline.bold())
                             Text(job.company).font(.caption).foregroundStyle(.secondary)
                         }
                         Spacer()
-                        Image(systemName: "eye").foregroundStyle(Color.accentColor)
+                        Image(systemName: "eye.fill")
+                            .foregroundStyle(Brand.violet)
+                            .font(.subheadline)
                     }
                 }
                 .foregroundStyle(.primary)
@@ -125,33 +141,29 @@ struct BulkApplyView: View {
             Button {
                 showingConfirmation = true
             } label: {
-                HStack {
-                    Spacer()
-                    Label("Submit \(selectedJobs.count) Application\(selectedJobs.count == 1 ? "" : "s")",
-                          systemImage: "paperplane.fill")
-                        .font(.headline)
-                    Spacer()
-                }
+                Label(
+                    "Submit \(selectedJobs.count) Application\(selectedJobs.count == 1 ? "" : "s")",
+                    systemImage: "paperplane.fill"
+                )
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(GradientButtonStyle())
             .listRowBackground(Color.clear)
-            .listRowInsets(.init())
-            .padding(.vertical, 4)
+            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
         }
     }
 
     var emptyState: some View {
-        VStack(spacing: 16) {
-            Image(systemName: "paperplane")
-                .font(.system(size: 60))
-                .foregroundStyle(.secondary)
-            Text("No Jobs to Apply To")
-                .font(.title2.bold())
-            Text("Add job opportunities in the Jobs tab first.")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, 40)
+        VStack(spacing: 20) {
+            GradientIcon(systemName: "paperplane.fill", size: 60)
+            VStack(spacing: 6) {
+                Text("No Jobs to Apply To")
+                    .font(.title2.bold())
+                Text("Add job opportunities in the Jobs tab first.")
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
+            }
         }
+        .padding(.horizontal, 40)
     }
 
     private func submitApplications() {
@@ -159,6 +171,8 @@ struct BulkApplyView: View {
         showingSuccess = true
     }
 }
+
+// MARK: - Selectable Row
 
 struct SelectableJobRow: View {
     let job: JobOpportunity
@@ -168,9 +182,10 @@ struct SelectableJobRow: View {
     var body: some View {
         Button(action: onTap) {
             HStack(spacing: 12) {
-                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(isSelected ? Color.accentColor : Color.secondary)
-                    .font(.title3)
+                GradientCheckCircle(isSelected: isSelected)
+
+                CompanyAvatar(name: job.company, size: 36)
+
                 VStack(alignment: .leading, spacing: 2) {
                     Text(job.position).font(.subheadline.bold())
                     Text(job.company).font(.caption).foregroundStyle(.secondary)
@@ -179,7 +194,7 @@ struct SelectableJobRow: View {
                 if let deadline = job.deadline {
                     Text(deadline.formatted(date: .abbreviated, time: .omitted))
                         .font(.caption2)
-                        .foregroundStyle(deadline < Date() ? .red : .orange)
+                        .foregroundStyle(deadline < Date() ? .red : Brand.violet)
                 }
             }
         }

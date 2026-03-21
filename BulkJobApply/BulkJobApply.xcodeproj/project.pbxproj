@@ -22,6 +22,7 @@
 		EE000000000000000000000D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000000000000000000000D /* ProfileView.swift */; };
 		EE000000000000000000000E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD000000000000000000000E /* Assets.xcassets */; };
 		EE000000000000000000000F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD000000000000000000000F /* Preview Assets.xcassets */; };
+		EE0000000000000000000010 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000000000000000000010 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		DD000000000000000000000D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DD000000000000000000000E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD000000000000000000000F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DD0000000000000000000010 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				DD0000000000000000000001 /* BulkJobApplyApp.swift */,
 				DD0000000000000000000002 /* ContentView.swift */,
+				DD0000000000000000000010 /* Theme.swift */,
 				AA0000000000000000000003 /* Models */,
 				AA0000000000000000000004 /* Views */,
 				DD000000000000000000000E /* Assets.xcassets */,
@@ -199,6 +202,7 @@
 				EE000000000000000000000B /* ApplicationsView.swift in Sources */,
 				EE000000000000000000000C /* ApplicationDetailView.swift in Sources */,
 				EE000000000000000000000D /* ProfileView.swift in Sources */,
+				EE0000000000000000000010 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

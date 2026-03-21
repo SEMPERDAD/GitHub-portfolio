@@ -23,6 +23,7 @@ struct ContentView: View {
                     Label("Profile", systemImage: "person.fill")
                 }
         }
+        .tint(Brand.violet)
     }
 }
 
