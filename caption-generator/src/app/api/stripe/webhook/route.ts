@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     case "customer.subscription.updated": {
       const subscription = event.data.object;
       if (subscription.status === "active") {
-        upgradeToProByStripeCustomerId(
+        await upgradeToProByStripeCustomerId(
           subscription.customer as string,
           subscription.id
         );
@@ -39,17 +39,16 @@ export async function POST(request: Request) {
         subscription.status === "canceled" ||
         subscription.status === "unpaid"
       ) {
-        downgradeToFreeByStripeCustomerId(subscription.customer as string);
+        await downgradeToFreeByStripeCustomerId(subscription.customer as string);
       }
       break;
     }
     case "customer.subscription.deleted": {
       const subscription = event.data.object;
-      downgradeToFreeByStripeCustomerId(subscription.customer as string);
+      await downgradeToFreeByStripeCustomerId(subscription.customer as string);
       break;
     }
     default:
-      // Unhandled event type — ignore
       break;
   }
 

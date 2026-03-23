@@ -1,78 +1,102 @@
-// Simple in-memory database for usage tracking
-// In production, replace with a real database (e.g., Prisma + PostgreSQL)
+import { createClient } from "@supabase/supabase-js";
+import { FREE_DAILY_LIMIT } from "./constants";
 
-interface UserRecord {
+// Use service role key — this runs server-side only, never exposed to clients
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
+
+export interface UserRecord {
   userId: string;
   tier: "free" | "pro";
   captionsUsedToday: number;
-  lastResetDate: string;
   stripeCustomerId?: string;
   stripeSubscriptionId?: string;
 }
 
-// In-memory store (resets on server restart)
-const userStore = new Map<string, UserRecord>();
+// Ensure a user row exists, return it with today's usage count
+export async function getUser(userId: string): Promise<UserRecord> {
+  // Upsert user row (no-op if already exists)
+  await supabase
+    .from("users")
+    .upsert({ id: userId }, { onConflict: "id", ignoreDuplicates: true });
 
-export function getUser(userId: string): UserRecord {
-  if (!userStore.has(userId)) {
-    userStore.set(userId, {
-      userId,
-      tier: "free",
-      captionsUsedToday: 0,
-      lastResetDate: new Date().toDateString(),
-    });
-  }
+  const { data: user } = await supabase
+    .from("users")
+    .select("tier, stripe_customer_id, stripe_subscription_id")
+    .eq("id", userId)
+    .single();
 
-  const user = userStore.get(userId)!;
+  const { data: usage } = await supabase
+    .from("daily_usage")
+    .select("count")
+    .eq("user_id", userId)
+    .eq("date", new Date().toISOString().split("T")[0])
+    .single();
 
-  // Reset daily count if it's a new day
-  if (user.lastResetDate !== new Date().toDateString()) {
-    user.captionsUsedToday = 0;
-    user.lastResetDate = new Date().toDateString();
-    userStore.set(userId, user);
-  }
-
-  return user;
+  return {
+    userId,
+    tier: user?.tier ?? "free",
+    captionsUsedToday: usage?.count ?? 0,
+    stripeCustomerId: user?.stripe_customer_id ?? undefined,
+    stripeSubscriptionId: user?.stripe_subscription_id ?? undefined,
+  };
 }
 
-export function incrementUsage(userId: string): void {
-  const user = getUser(userId);
-  user.captionsUsedToday += 1;
-  userStore.set(userId, user);
+// Atomically increment today's usage using upsert
+export async function incrementUsage(userId: string): Promise<void> {
+  const today = new Date().toISOString().split("T")[0];
+
+  const { data: existing } = await supabase
+    .from("daily_usage")
+    .select("id, count")
+    .eq("user_id", userId)
+    .eq("date", today)
+    .single();
+
+  if (existing) {
+    await supabase
+      .from("daily_usage")
+      .update({ count: existing.count + 1 })
+      .eq("id", existing.id);
+  } else {
+    await supabase
+      .from("daily_usage")
+      .insert({ user_id: userId, date: today, count: 1 });
+  }
 }
 
-export function upgradeToProByStripeCustomerId(
+export async function upgradeToProByStripeCustomerId(
   stripeCustomerId: string,
   stripeSubscriptionId: string
-): void {
-  for (const [userId, user] of userStore.entries()) {
-    if (user.stripeCustomerId === stripeCustomerId) {
-      user.tier = "pro";
-      user.stripeSubscriptionId = stripeSubscriptionId;
-      userStore.set(userId, user);
-      return;
-    }
-  }
+): Promise<void> {
+  await supabase
+    .from("users")
+    .update({ tier: "pro", stripe_subscription_id: stripeSubscriptionId })
+    .eq("stripe_customer_id", stripeCustomerId);
 }
 
-export function downgradeToFreeByStripeCustomerId(
+export async function downgradeToFreeByStripeCustomerId(
   stripeCustomerId: string
-): void {
-  for (const [userId, user] of userStore.entries()) {
-    if (user.stripeCustomerId === stripeCustomerId) {
-      user.tier = "free";
-      user.stripeSubscriptionId = undefined;
-      userStore.set(userId, user);
-      return;
-    }
-  }
+): Promise<void> {
+  await supabase
+    .from("users")
+    .update({ tier: "free", stripe_subscription_id: null })
+    .eq("stripe_customer_id", stripeCustomerId);
 }
 
-export function setStripeCustomerId(
+export async function setStripeCustomerId(
   userId: string,
   stripeCustomerId: string
-): void {
-  const user = getUser(userId);
-  user.stripeCustomerId = stripeCustomerId;
-  userStore.set(userId, user);
+): Promise<void> {
+  await supabase
+    .from("users")
+    .update({ stripe_customer_id: stripeCustomerId })
+    .eq("id", userId);
+}
+
+// Check if free user is within daily limit (used in API route for fast check)
+export function isWithinFreeLimit(captionsUsedToday: number): boolean {
+  return captionsUsedToday < FREE_DAILY_LIMIT;
 }

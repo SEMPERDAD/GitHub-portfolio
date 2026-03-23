@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { auth } from "@clerk/nextjs/server";
+import { safeAuth } from "@/lib/auth-safe";
 import { PRO_PRICE_MONTHLY } from "@/lib/constants";
 
 export default async function PricingPage() {
-  const { userId } = await auth();
+  const { userId } = await safeAuth();
   const isSignedIn = !!userId;
 
   return (
@@ -136,13 +136,13 @@ function UpgradeButton() {
 
     const clerkUser = await currentUser();
     const email = clerkUser?.emailAddresses[0]?.emailAddress || "";
-    const dbUser = getUser(userId as string);
-
     const uid = userId as string;
+    const dbUser = await getUser(uid);
+
     const session = await createCheckoutSession(uid, email, dbUser.stripeCustomerId);
     if (session.url) {
       if (session.customer && !dbUser.stripeCustomerId) {
-        setStripeCustomerId(uid, session.customer as string);
+        await setStripeCustomerId(uid, session.customer as string);
       }
       redirect(session.url);
     }

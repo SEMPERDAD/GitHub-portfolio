@@ -15,7 +15,7 @@ export default async function DashboardPage({
   if (!userId) redirect("/sign-in");
 
   const clerkUser = await currentUser();
-  const dbUser = getUser(userId);
+  const dbUser = await getUser(userId!);
   const params = await searchParams;
 
   const isPro = dbUser.tier === "pro";

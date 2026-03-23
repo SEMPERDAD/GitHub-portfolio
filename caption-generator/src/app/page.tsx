@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { auth } from "@clerk/nextjs/server";
+import { safeAuth } from "@/lib/auth-safe";
 import { PRO_PRICE_MONTHLY } from "@/lib/constants";
 
 export default async function Home() {
-  const { userId } = await auth();
+  const { userId } = await safeAuth();
   const isSignedIn = !!userId;
 
   return (

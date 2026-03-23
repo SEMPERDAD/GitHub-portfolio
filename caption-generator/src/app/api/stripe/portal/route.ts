@@ -8,7 +8,7 @@ export async function POST() {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const dbUser = getUser(userId);
+  const dbUser = await getUser(userId);
 
   if (!dbUser.stripeCustomerId) {
     return Response.json(

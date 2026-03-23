@@ -10,7 +10,7 @@ export async function POST() {
 
   const clerkUser = await currentUser();
   const email = clerkUser?.emailAddresses[0]?.emailAddress || "";
-  const dbUser = getUser(userId);
+  const dbUser = await getUser(userId);
 
   const session = await createCheckoutSession(
     userId,
@@ -19,7 +19,7 @@ export async function POST() {
   );
 
   if (session.customer && !dbUser.stripeCustomerId) {
-    setStripeCustomerId(userId, session.customer as string);
+    await setStripeCustomerId(userId, session.customer as string);
   }
 
   return Response.json({ url: session.url });

@@ -8,7 +8,7 @@ export async function GET() {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const dbUser = getUser(userId);
+  const dbUser = await getUser(userId);
 
   return Response.json({
     tier: dbUser.tier,

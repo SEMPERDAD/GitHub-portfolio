@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const dbUser = getUser(userId);
+  const dbUser = await getUser(userId);
   const isPro = dbUser.tier === "pro";
 
   // Check platform/tone access
@@ -103,7 +103,7 @@ Caption:`;
       .filter((h) => h.startsWith("#"));
   }
 
-  incrementUsage(userId);
+  await incrementUsage(userId);
 
   return Response.json({ caption, hashtags });
 }
