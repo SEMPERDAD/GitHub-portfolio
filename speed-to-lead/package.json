@@ -1,0 +1,28 @@
+{
+  "name": "speed-to-lead",
+  "version": "1.0.0",
+  "description": "Agentic speed-to-lead automation: AI-personalized SMS + email on form submission",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "dev:watch": "nodemon --exec ts-node src/index.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.56.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14",
+    "twilio": "^5.3.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.0",
+    "@types/nodemailer": "^6.4.15",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

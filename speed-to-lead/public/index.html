@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get In Touch — Book Your Free Consultation</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d6a9f 50%, #1a5276 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      max-width: 560px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1e3a5f, #2d6a9f);
+      color: #fff;
+      padding: 36px 40px 30px;
+      text-align: center;
+    }
+
+    .header .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 5px 14px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 15px;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    .header .response-time {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .header .response-time::before {
+      content: "⚡";
+    }
+
+    .form-body {
+      padding: 36px 40px 40px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    label .required {
+      color: #ef4444;
+      margin-left: 2px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #111827;
+      background: #fff;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #2d6a9f;
+      box-shadow: 0 0 0 3px rgba(45,106,159,0.12);
+    }
+
+    input.error, select.error, textarea.error {
+      border-color: #ef4444;
+    }
+
+    .error-msg {
+      display: none;
+      color: #ef4444;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #1e3a5f, #2d6a9f);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+      letter-spacing: 0.3px;
+      margin-top: 4px;
+    }
+
+    .submit-btn:hover { opacity: 0.92; }
+    .submit-btn:active { transform: scale(0.99); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .submit-btn .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .trust-signals {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .trust-item::before {
+      font-size: 14px;
+    }
+
+    .alert {
+      display: none;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .alert-success {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      color: #166534;
+    }
+
+    .alert-error {
+      background: #fef2f2;
+      border: 1.5px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .alert .alert-icon {
+      font-size: 22px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .alert strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 480px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-body { padding: 28px 24px 32px; }
+      .header { padding: 28px 24px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">Free Consultation</div>
+      <h1>Let's Talk About Your Goals</h1>
+      <p>Fill out the form and we'll reach out within minutes to schedule your appointment.</p>
+      <div class="response-time">We typically respond in under 5 minutes</div>
+    </div>
+
+    <div class="form-body">
+      <div id="alert" class="alert"></div>
+
+      <form id="leadForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name <span class="required">*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jane" autocomplete="given-name">
+            <div class="error-msg" id="firstName-error">Required</div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name <span class="required">*</span></label>
+            <input type="text" id="lastName" name="lastName" placeholder="Smith" autocomplete="family-name">
+            <div class="error-msg" id="lastName-error">Required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email">
+          <div class="error-msg" id="email-error">Valid email required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
+          <div class="error-msg" id="phone-error">Valid phone number required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company / Organization</label>
+          <input type="text" id="company" name="company" placeholder="Acme Corp (optional)" autocomplete="organization">
+        </div>
+
+        <div class="form-group">
+          <label for="interest">What are you interested in? <span class="required">*</span></label>
+          <select id="interest" name="interest">
+            <option value="">— Select a service —</option>
+            <option value="Digital Marketing & SEO">Digital Marketing & SEO</option>
+            <option value="Web Design & Development">Web Design & Development</option>
+            <option value="Business Consulting">Business Consulting</option>
+            <option value="Sales Strategy & CRM">Sales Strategy & CRM</option>
+            <option value="Lead Generation">Lead Generation</option>
+            <option value="Social Media Management">Social Media Management</option>
+            <option value="Automation & AI Solutions">Automation & AI Solutions</option>
+            <option value="Other / General Inquiry">Other / General Inquiry</option>
+          </select>
+          <div class="error-msg" id="interest-error">Please select a service</div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tell us more <span style="font-weight:400;color:#9ca3af;">(optional)</span></label>
+          <textarea id="message" name="message" placeholder="Briefly describe your goals or any questions you have..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span id="btnText">Get My Free Consultation →</span>
+          <div class="spinner" id="btnSpinner"></div>
+        </button>
+
+        <div class="trust-signals">
+          <div class="trust-item">🔒 100% Private & Secure</div>
+          <div class="trust-item">📞 No spam calls</div>
+          <div class="trust-item">⚡ Instant response</div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('leadForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
+    const alertBox = document.getElementById('alert');
+
+    function showAlert(type, title, message) {
+      alertBox.className = `alert alert-${type}`;
+      alertBox.innerHTML = `<span class="alert-icon">${type === 'success' ? '🎉' : '⚠️'}</span><strong>${title}</strong>${message}`;
+      alertBox.style.display = 'block';
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function setLoading(loading) {
+      submitBtn.disabled = loading;
+      btnText.style.display = loading ? 'none' : 'inline';
+      btnSpinner.style.display = loading ? 'block' : 'none';
+    }
+
+    function clearErrors() {
+      document.querySelectorAll('input, select, textarea').forEach(el => el.classList.remove('error'));
+      document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
+    }
+
+    function showFieldError(fieldId, message) {
+      const field = document.getElementById(fieldId);
+      const errEl = document.getElementById(fieldId + '-error');
+      if (field) field.classList.add('error');
+      if (errEl) { errEl.textContent = message; errEl.style.display = 'block'; }
+    }
+
+    function validate(data) {
+      let valid = true;
+      if (!data.firstName.trim()) { showFieldError('firstName', 'First name is required'); valid = false; }
+      if (!data.lastName.trim()) { showFieldError('lastName', 'Last name is required'); valid = false; }
+      if (!data.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+        showFieldError('email', 'A valid email address is required'); valid = false;
+      }
+      if (!data.phone.trim() || data.phone.replace(/\D/g, '').length < 10) {
+        showFieldError('phone', 'A valid 10-digit phone number is required'); valid = false;
+      }
+      if (!data.interest) { showFieldError('interest', 'Please select a service'); valid = false; }
+      return valid;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearErrors();
+      alertBox.style.display = 'none';
+
+      const data = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        company: document.getElementById('company').value.trim() || undefined,
+        interest: document.getElementById('interest').value,
+        message: document.getElementById('message').value.trim() || undefined,
+      };
+
+      if (!validate(data)) return;
+
+      setLoading(true);
+
+      try {
+        const res = await fetch('/api/leads/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        const json = await res.json();
+
+        if (res.ok || res.status === 207) {
+          const smsSent = json.result?.smsSent;
+          const emailSent = json.result?.emailSent;
+
+          let channels = [];
+          if (smsSent) channels.push('SMS');
+          if (emailSent) channels.push('email');
+
+          const channelText = channels.length
+            ? `We've sent you a ${channels.join(' and ')} with next steps.`
+            : 'Our team will be reaching out to you shortly.';
+
+          showAlert(
+            'success',
+            "You're all set, " + data.firstName + "! 🎉",
+            `${channelText} We'll be in touch soon to schedule your appointment.`
+          );
+          form.reset();
+          form.style.display = 'none';
+        } else {
+          const detail = json.details
+            ? (typeof json.details === 'object'
+                ? Object.values(json.details).flat().join(', ')
+                : json.details)
+            : json.error ?? 'Please try again.';
+          showAlert('error', 'Something went wrong', detail);
+        }
+      } catch (err) {
+        showAlert('error', 'Connection error', 'Please check your connection and try again.');
+      } finally {
+        setLoading(false);
+      }
+    });
+  </script>
+</body>
+</html>
