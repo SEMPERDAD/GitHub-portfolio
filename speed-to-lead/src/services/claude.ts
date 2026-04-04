@@ -1,4 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
+import type { Message, ContentBlock } from "@anthropic-ai/sdk/resources/messages";
 import { LeadFormData, PersonalizedMessages } from "../types/lead";
 
 const client = new Anthropic({
@@ -52,13 +53,12 @@ Make each message feel like it was written specifically for this person based on
   const response = await client.messages.create({
     model: "claude-opus-4-6",
     max_tokens: 1024,
-    thinking: { type: "adaptive" },
     system: systemPrompt,
     messages: [{ role: "user", content: userPrompt }],
-  });
+  }) as Message;
 
   // Extract text from response content
-  const textBlock = response.content.find((block) => block.type === "text");
+  const textBlock = response.content.find((block: ContentBlock) => block.type === "text");
   if (!textBlock || textBlock.type !== "text") {
     throw new Error("No text response from Claude");
   }
