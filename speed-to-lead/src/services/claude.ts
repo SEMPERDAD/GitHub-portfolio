@@ -2,6 +2,14 @@ import Anthropic from "@anthropic-ai/sdk";
 import type { Message, ContentBlock } from "@anthropic-ai/sdk/resources/messages";
 import { LeadFormData, PersonalizedMessages } from "../types/lead";
 
+// Node 22 uses undici for native fetch — route through the env proxy if set
+const proxyUrl = process.env.HTTPS_PROXY ?? process.env.https_proxy;
+if (proxyUrl) {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { setGlobalDispatcher, ProxyAgent } = require("undici");
+  setGlobalDispatcher(new ProxyAgent(proxyUrl));
+}
+
 const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
@@ -50,12 +58,15 @@ Return a JSON object with exactly these fields:
 
 Make each message feel like it was written specifically for this person based on their interest and context.`;
 
-  const response = await client.messages.create({
-    model: "claude-opus-4-6",
-    max_tokens: 1024,
-    system: systemPrompt,
-    messages: [{ role: "user", content: userPrompt }],
-  }) as Message;
+  const response = await client.messages.create(
+    {
+      model: "claude-opus-4-6",
+      max_tokens: 1024,
+      system: systemPrompt,
+      messages: [{ role: "user", content: userPrompt }],
+    },
+    { timeout: 120_000 }
+  ) as Message;
 
   // Extract text from response content
   const textBlock = response.content.find((block: ContentBlock) => block.type === "text");
