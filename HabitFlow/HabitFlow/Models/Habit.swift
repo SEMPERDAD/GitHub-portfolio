@@ -15,13 +15,30 @@ final class Habit {
     var name: String
     var iconName: String
     var colorHex: String
-    var frequency: HabitFrequency
     var reminderTime: Date?
     var createdAt: Date
     var sortOrder: Int
 
+    /// Stored as JSON-encoded Data because SwiftData cannot persist enums with associated values.
+    var frequencyData: Data = Data()
+
     @Relationship(deleteRule: .cascade, inverse: \HabitEntry.habit)
     var entries: [HabitEntry] = []
+
+    /// Computed accessor for the typed frequency enum.
+    @Transient
+    var frequency: HabitFrequency {
+        get {
+            guard !frequencyData.isEmpty,
+                  let decoded = try? JSONDecoder().decode(HabitFrequency.self, from: frequencyData) else {
+                return .daily
+            }
+            return decoded
+        }
+        set {
+            frequencyData = (try? JSONEncoder().encode(newValue)) ?? Data()
+        }
+    }
 
     init(
         name: String,
@@ -35,7 +52,7 @@ final class Habit {
         self.name = name
         self.iconName = iconName
         self.colorHex = colorHex
-        self.frequency = frequency
+        self.frequencyData = (try? JSONEncoder().encode(frequency)) ?? Data()
         self.reminderTime = reminderTime
         self.createdAt = Date()
         self.sortOrder = sortOrder
