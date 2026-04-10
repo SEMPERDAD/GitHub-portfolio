@@ -15,9 +15,6 @@ extension Color {
 
         self.init(red: r, green: g, blue: b)
     }
-
-    /// The app's primary accent color — teal.
-    static let accent = Color(hex: "#1A8C7A")
 }
 
 /// Preset color palette for habit customization.
