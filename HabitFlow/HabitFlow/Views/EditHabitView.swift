@@ -94,6 +94,7 @@ struct EditHabitView: View {
                             )
                     }
                     .foregroundStyle(selectedIcon == icon ? Color(hex: selectedColor) : .secondary)
+                    .buttonStyle(.plain)
                 }
             }
             .padding(.vertical, 4)
@@ -122,6 +123,7 @@ struct EditHabitView: View {
                                 }
                             }
                     }
+                    .buttonStyle(.plain)
                 }
             }
             .padding(.vertical, 4)
