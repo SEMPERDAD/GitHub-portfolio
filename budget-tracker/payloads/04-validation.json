@@ -1,0 +1,169 @@
+{
+  "requests": [
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 0, "startRowIndex": 1, "endRowIndex": 2, "startColumnIndex": 1, "endColumnIndex": 2 },
+        "rule": {
+          "condition": {
+            "type": "ONE_OF_RANGE",
+            "values": [{ "userEnteredValue": "=Reference!$I$2:$I$13" }]
+          },
+          "showCustomUi": true,
+          "strict": true,
+          "inputMessage": "Select the month to view on the dashboard."
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 1, "startRowIndex": 1, "endRowIndex": 200, "startColumnIndex": 3, "endColumnIndex": 4 },
+        "rule": {
+          "condition": {
+            "type": "ONE_OF_RANGE",
+            "values": [{ "userEnteredValue": "=Reference!$A$2:$A$4" }]
+          },
+          "showCustomUi": true,
+          "strict": true
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 1, "startRowIndex": 1, "endRowIndex": 200, "startColumnIndex": 4, "endColumnIndex": 5 },
+        "rule": {
+          "condition": {
+            "type": "ONE_OF_RANGE",
+            "values": [{ "userEnteredValue": "=Reference!$B$2:$D$13" }]
+          },
+          "showCustomUi": true,
+          "strict": false,
+          "inputMessage": "Choose a category matching the bucket (Needs=col B, Wants=col C, Savings & Debt=col D)."
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 1, "startRowIndex": 1, "endRowIndex": 200, "startColumnIndex": 1, "endColumnIndex": 2 },
+        "rule": {
+          "condition": { "type": "DATE_IS_VALID" },
+          "strict": false
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 1, "startRowIndex": 1, "endRowIndex": 200, "startColumnIndex": 2, "endColumnIndex": 3 },
+        "rule": {
+          "condition": {
+            "type": "NUMBER_GREATER",
+            "values": [{ "userEnteredValue": "0" }]
+          },
+          "strict": false,
+          "inputMessage": "Amount must be greater than 0."
+        }
+      }
+    },
+    {
+      "repeatCell": {
+        "range": { "sheetId": 1, "startRowIndex": 1, "endRowIndex": 200, "startColumnIndex": 7, "endColumnIndex": 8 },
+        "cell": {
+          "dataValidation": { "condition": { "type": "BOOLEAN" } }
+        },
+        "fields": "dataValidation"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 2, "startRowIndex": 1, "endRowIndex": 100, "startColumnIndex": 3, "endColumnIndex": 4 },
+        "rule": {
+          "condition": {
+            "type": "ONE_OF_LIST",
+            "values": [
+              { "userEnteredValue": "Paycheck" },
+              { "userEnteredValue": "Freelance" },
+              { "userEnteredValue": "Side Hustle" },
+              { "userEnteredValue": "Dividends" },
+              { "userEnteredValue": "Rental" },
+              { "userEnteredValue": "Other" }
+            ]
+          },
+          "showCustomUi": true,
+          "strict": true
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 2, "startRowIndex": 1, "endRowIndex": 100, "startColumnIndex": 1, "endColumnIndex": 2 },
+        "rule": {
+          "condition": { "type": "DATE_IS_VALID" },
+          "strict": false
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 2, "startRowIndex": 1, "endRowIndex": 100, "startColumnIndex": 2, "endColumnIndex": 3 },
+        "rule": {
+          "condition": {
+            "type": "NUMBER_GREATER",
+            "values": [{ "userEnteredValue": "0" }]
+          },
+          "strict": false
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 3, "startRowIndex": 1, "endRowIndex": 15, "startColumnIndex": 1, "endColumnIndex": 2 },
+        "rule": {
+          "condition": {
+            "type": "NUMBER_GREATER_THAN_EQ",
+            "values": [{ "userEnteredValue": "0" }]
+          },
+          "strict": false
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 3, "startRowIndex": 1, "endRowIndex": 15, "startColumnIndex": 2, "endColumnIndex": 3 },
+        "rule": {
+          "condition": {
+            "type": "NUMBER_BETWEEN",
+            "values": [
+              { "userEnteredValue": "0" },
+              { "userEnteredValue": "1" }
+            ]
+          },
+          "strict": false,
+          "inputMessage": "Enter APR as a decimal (e.g. 0.05 for 5%)."
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 3, "startRowIndex": 1, "endRowIndex": 15, "startColumnIndex": 3, "endColumnIndex": 6 },
+        "rule": {
+          "condition": {
+            "type": "NUMBER_GREATER_THAN_EQ",
+            "values": [{ "userEnteredValue": "0" }]
+          },
+          "strict": false
+        }
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": { "sheetId": 4, "startRowIndex": 1, "endRowIndex": 20, "startColumnIndex": 1, "endColumnIndex": 4 },
+        "rule": {
+          "condition": {
+            "type": "NUMBER_GREATER_THAN_EQ",
+            "values": [{ "userEnteredValue": "0" }]
+          },
+          "strict": false
+        }
+      }
+    }
+  ]
+}

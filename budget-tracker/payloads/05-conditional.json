@@ -1,0 +1,128 @@
+{
+  "requests": [
+    {
+      "addConditionalFormatRule": {
+        "rule": {
+          "ranges": [{ "sheetId": 1, "startRowIndex": 1, "endRowIndex": 200, "startColumnIndex": 0, "endColumnIndex": 8 }],
+          "booleanRule": {
+            "condition": {
+              "type": "CUSTOM_FORMULA",
+              "values": [{ "userEnteredValue": "=$H2=TRUE" }]
+            },
+            "format": {
+              "backgroundColor": { "red": 0.878, "green": 0.969, "blue": 0.980 }
+            }
+          }
+        },
+        "index": 0
+      }
+    },
+
+    {
+      "addConditionalFormatRule": {
+        "rule": {
+          "ranges": [{ "sheetId": 0, "startRowIndex": 4, "endRowIndex": 5, "startColumnIndex": 0, "endColumnIndex": 4 }],
+          "booleanRule": {
+            "condition": {
+              "type": "CUSTOM_FORMULA",
+              "values": [{ "userEnteredValue": "=AND($B$8>0,$B$9/$B$8>Reference!$G$1*1.05)" }]
+            },
+            "format": {
+              "backgroundColor": { "red": 1, "green": 0.718, "blue": 0.302 },
+              "textFormat": { "bold": true, "foregroundColor": { "red": 0.051, "green": 0.106, "blue": 0.165 } }
+            }
+          }
+        },
+        "index": 0
+      }
+    },
+    {
+      "addConditionalFormatRule": {
+        "rule": {
+          "ranges": [{ "sheetId": 0, "startRowIndex": 4, "endRowIndex": 5, "startColumnIndex": 4, "endColumnIndex": 8 }],
+          "booleanRule": {
+            "condition": {
+              "type": "CUSTOM_FORMULA",
+              "values": [{ "userEnteredValue": "=AND($B$8>0,$B$10/$B$8>Reference!$G$2*1.05)" }]
+            },
+            "format": {
+              "backgroundColor": { "red": 1, "green": 0.718, "blue": 0.302 },
+              "textFormat": { "bold": true, "foregroundColor": { "red": 0.051, "green": 0.106, "blue": 0.165 } }
+            }
+          }
+        },
+        "index": 0
+      }
+    },
+
+    {
+      "addConditionalFormatRule": {
+        "rule": {
+          "ranges": [{ "sheetId": 4, "startRowIndex": 1, "endRowIndex": 20, "startColumnIndex": 8, "endColumnIndex": 9 }],
+          "booleanRule": {
+            "condition": {
+              "type": "TEXT_CONTAINS",
+              "values": [{ "userEnteredValue": "Funded" }]
+            },
+            "format": {
+              "backgroundColor": { "red": 0.698, "green": 0.922, "blue": 0.949 },
+              "textFormat": { "bold": true }
+            }
+          }
+        },
+        "index": 0
+      }
+    },
+
+    {
+      "addConditionalFormatRule": {
+        "rule": {
+          "ranges": [{ "sheetId": 4, "startRowIndex": 1, "endRowIndex": 20, "startColumnIndex": 4, "endColumnIndex": 5 }],
+          "gradientRule": {
+            "minpoint": { "color": { "red": 1.0, "green": 0.8, "blue": 0.737 }, "type": "NUMBER", "value": "0" },
+            "midpoint": { "color": { "red": 0.910, "green": 0.957, "blue": 0.973 }, "type": "NUMBER", "value": "0.5" },
+            "maxpoint": { "color": { "red": 0.698, "green": 0.922, "blue": 0.949 }, "type": "NUMBER", "value": "1" }
+          }
+        },
+        "index": 0
+      }
+    },
+
+    {
+      "addConditionalFormatRule": {
+        "rule": {
+          "ranges": [{ "sheetId": 3, "startRowIndex": 1, "endRowIndex": 15, "startColumnIndex": 2, "endColumnIndex": 3 }],
+          "booleanRule": {
+            "condition": {
+              "type": "NUMBER_GREATER",
+              "values": [{ "userEnteredValue": "0.15" }]
+            },
+            "format": {
+              "backgroundColor": { "red": 1, "green": 0.718, "blue": 0.302 },
+              "textFormat": { "bold": true }
+            }
+          }
+        },
+        "index": 0
+      }
+    },
+    {
+      "addConditionalFormatRule": {
+        "rule": {
+          "ranges": [{ "sheetId": 3, "startRowIndex": 1, "endRowIndex": 15, "startColumnIndex": 6, "endColumnIndex": 7 }],
+          "booleanRule": {
+            "condition": {
+              "type": "NUMBER_LESS",
+              "values": [{ "userEnteredValue": "12" }]
+            },
+            "format": {
+              "backgroundColor": { "red": 0.698, "green": 0.922, "blue": 0.949 },
+              "textFormat": { "bold": true }
+            }
+          }
+        },
+        "index": 0
+      }
+    }
+  ]
+}

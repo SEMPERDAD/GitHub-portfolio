@@ -1,0 +1,95 @@
+{
+  "requests": [
+    {
+      "addChart": {
+        "chart": {
+          "spec": {
+            "title": "",
+            "titleTextFormat": { "fontFamily": "Arial", "fontSize": 12, "bold": true, "foregroundColor": { "red": 0.051, "green": 0.106, "blue": 0.165 } },
+            "basicChart": {
+              "chartType": "BAR",
+              "legendPosition": "NO_LEGEND",
+              "axis": [
+                { "position": "BOTTOM_AXIS", "title": "" },
+                { "position": "LEFT_AXIS", "title": "" }
+              ],
+              "domains": [
+                {
+                  "domain": {
+                    "sourceRange": {
+                      "sources": [
+                        { "sheetId": 0, "startRowIndex": 7, "endRowIndex": 12, "startColumnIndex": 0, "endColumnIndex": 1 }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "series": [
+                {
+                  "series": {
+                    "sourceRange": {
+                      "sources": [
+                        { "sheetId": 0, "startRowIndex": 7, "endRowIndex": 12, "startColumnIndex": 1, "endColumnIndex": 2 }
+                      ]
+                    }
+                  },
+                  "targetAxis": "BOTTOM_AXIS",
+                  "colorStyle": { "rgbColor": { "red": 0.0, "green": 0.592, "blue": 0.655 } }
+                }
+              ],
+              "headerCount": 0
+            },
+            "backgroundColorStyle": { "rgbColor": { "red": 1, "green": 1, "blue": 1 } }
+          },
+          "position": {
+            "overlayPosition": {
+              "anchorCell": { "sheetId": 0, "rowIndex": 31, "columnIndex": 0 },
+              "offsetXPixels": 0,
+              "offsetYPixels": 10,
+              "widthPixels": 480,
+              "heightPixels": 260
+            }
+          }
+        }
+      }
+    },
+    {
+      "addChart": {
+        "chart": {
+          "spec": {
+            "title": "",
+            "titleTextFormat": { "fontFamily": "Arial", "fontSize": 12, "bold": true, "foregroundColor": { "red": 0.051, "green": 0.106, "blue": 0.165 } },
+            "pieChart": {
+              "legendPosition": "RIGHT_LEGEND",
+              "pieHole": 0.5,
+              "domain": {
+                "sourceRange": {
+                  "sources": [
+                    { "sheetId": 0, "startRowIndex": 7, "endRowIndex": 10, "startColumnIndex": 6, "endColumnIndex": 7 }
+                  ]
+                }
+              },
+              "series": {
+                "sourceRange": {
+                  "sources": [
+                    { "sheetId": 0, "startRowIndex": 7, "endRowIndex": 10, "startColumnIndex": 7, "endColumnIndex": 8 }
+                  ]
+                }
+              }
+            },
+            "backgroundColorStyle": { "rgbColor": { "red": 1, "green": 1, "blue": 1 } }
+          },
+          "position": {
+            "overlayPosition": {
+              "anchorCell": { "sheetId": 0, "rowIndex": 31, "columnIndex": 6 },
+              "offsetXPixels": 0,
+              "offsetYPixels": 10,
+              "widthPixels": 380,
+              "heightPixels": 260
+            }
+          }
+        }
+      }
+    }
+  ]
+}

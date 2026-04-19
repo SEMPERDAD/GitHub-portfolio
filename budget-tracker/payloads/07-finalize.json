@@ -1,0 +1,13 @@
+{
+  "requests": [
+    {
+      "updateSheetProperties": {
+        "properties": {
+          "sheetId": 5,
+          "hidden": true
+        },
+        "fields": "hidden"
+      }
+    }
+  ]
+}
