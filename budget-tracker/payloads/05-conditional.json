@@ -25,7 +25,7 @@
           "booleanRule": {
             "condition": {
               "type": "CUSTOM_FORMULA",
-              "values": [{ "userEnteredValue": "=AND($B$8>0,$B$9/$B$8>Reference!$G$1*1.05)" }]
+              "values": [{ "userEnteredValue": "=AND($B$8>0,$B$9/$B$8>INDIRECT(\"Reference!G1\")*1.05)" }]
             },
             "format": {
               "backgroundColor": { "red": 1, "green": 0.718, "blue": 0.302 },
@@ -43,7 +43,7 @@
           "booleanRule": {
             "condition": {
               "type": "CUSTOM_FORMULA",
-              "values": [{ "userEnteredValue": "=AND($B$8>0,$B$10/$B$8>Reference!$G$2*1.05)" }]
+              "values": [{ "userEnteredValue": "=AND($B$8>0,$B$10/$B$8>INDIRECT(\"Reference!G2\")*1.05)" }]
             },
             "format": {
               "backgroundColor": { "red": 1, "green": 0.718, "blue": 0.302 },
