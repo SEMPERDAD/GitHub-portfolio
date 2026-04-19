@@ -1,0 +1,404 @@
+{
+  "valueInputOption": "USER_ENTERED",
+  "data": [
+    {
+      "range": "Reference!A1:A4",
+      "values": [["Bucket"], ["Needs"], ["Wants"], ["Savings & Debt"]]
+    },
+    {
+      "range": "Reference!B1:B13",
+      "values": [
+        ["Needs Category"],
+        ["Rent/Mortgage"],
+        ["Utilities"],
+        ["Groceries"],
+        ["Transportation"],
+        ["Insurance"],
+        ["Phone"],
+        ["Internet"],
+        ["Medical"],
+        ["Childcare"],
+        ["Subscriptions (Essential)"],
+        ["Minimum Debt Payments"],
+        ["Other Needs"]
+      ]
+    },
+    {
+      "range": "Reference!C1:C13",
+      "values": [
+        ["Wants Category"],
+        ["Dining Out"],
+        ["Entertainment"],
+        ["Shopping"],
+        ["Personal Care"],
+        ["Travel"],
+        ["Hobbies"],
+        ["Subscriptions (Non-Essential)"],
+        ["Gifts"],
+        ["Gym Membership"],
+        ["Streaming Services"],
+        ["Alcohol/Bars"],
+        ["Other Wants"]
+      ]
+    },
+    {
+      "range": "Reference!D1:D8",
+      "values": [
+        ["Savings & Debt Category"],
+        ["Emergency Fund"],
+        ["Retirement (401k/IRA)"],
+        ["Sinking Fund Contribution"],
+        ["Extra Debt Payment"],
+        ["Investment"],
+        ["Savings Account"],
+        ["Other Savings"]
+      ]
+    },
+    {
+      "range": "Reference!F1:G3",
+      "values": [
+        ["Needs Target %", 0.50],
+        ["Wants Target %", 0.30],
+        ["Savings Target %", 0.20]
+      ]
+    },
+    {
+      "range": "Reference!I1:I13",
+      "values": [
+        ["Month"],
+        ["Jan 2025"], ["Feb 2025"], ["Mar 2025"], ["Apr 2025"],
+        ["May 2025"], ["Jun 2025"], ["Jul 2025"], ["Aug 2025"],
+        ["Sep 2025"], ["Oct 2025"], ["Nov 2025"], ["Dec 2025"]
+      ]
+    },
+
+    {
+      "range": "Income Log!A1:F1",
+      "values": [["#", "Date", "Amount", "Source", "Month", "Notes"]]
+    },
+    {
+      "range": "Income Log!A2",
+      "values": [["=ARRAYFORMULA(IF(B2:B=\"\",\"\",ROW(B2:B)-1))"]]
+    },
+    {
+      "range": "Income Log!E2",
+      "values": [["=ARRAYFORMULA(IF(B2:B=\"\",\"\",TEXT(B2:B,\"MMM YYYY\")))"]]
+    },
+    {
+      "range": "Income Log!B2:F9",
+      "values": [
+        ["01/01/2025", 3200.00, "Paycheck", "", "Bi-weekly"],
+        ["01/15/2025", 3200.00, "Paycheck", "", "Bi-weekly"],
+        ["01/22/2025", 450.00,  "Freelance", "", "Logo design project"],
+        ["02/01/2025", 3200.00, "Paycheck", "", ""],
+        ["02/15/2025", 3200.00, "Paycheck", "", ""],
+        ["03/01/2025", 3200.00, "Paycheck", "", ""],
+        ["03/15/2025", 3200.00, "Paycheck", "", ""],
+        ["03/20/2025", 600.00,  "Side Hustle", "", "Tutoring"]
+      ]
+    },
+
+    {
+      "range": "Expense Log!A1:H1",
+      "values": [["#", "Date", "Amount", "Bucket", "Category", "Description", "Month", "Paid"]]
+    },
+    {
+      "range": "Expense Log!A2",
+      "values": [["=ARRAYFORMULA(IF(B2:B=\"\",\"\",ROW(B2:B)-1))"]]
+    },
+    {
+      "range": "Expense Log!G2",
+      "values": [["=ARRAYFORMULA(IF(B2:B=\"\",\"\",TEXT(B2:B,\"MMM YYYY\")))"]]
+    },
+    {
+      "range": "Expense Log!B2:H45",
+      "values": [
+        ["01/02/2025", 1450.00, "Needs", "Rent/Mortgage",            "Monthly rent",                "", false],
+        ["01/03/2025", 120.00,  "Needs", "Utilities",                 "Electric bill",               "", false],
+        ["01/05/2025", 380.00,  "Needs", "Groceries",                 "Weekly groceries x2",         "", false],
+        ["01/06/2025", 85.00,   "Needs", "Transportation",            "Gas",                         "", false],
+        ["01/10/2025", 140.00,  "Needs", "Insurance",                 "Car insurance",               "", false],
+        ["01/12/2025", 45.00,   "Needs", "Phone",                     "Mobile plan",                 "", false],
+        ["01/15/2025", 65.00,   "Needs", "Internet",                  "Home internet",               "", false],
+        ["01/18/2025", 30.00,   "Needs", "Subscriptions (Essential)", "iCloud storage + antivirus",  "", false],
+        ["01/04/2025", 95.00,   "Wants", "Dining Out",                "4 restaurant visits",         "", false],
+        ["01/08/2025", 60.00,   "Wants", "Entertainment",             "Movie + event tickets",       "", false],
+        ["01/14/2025", 120.00,  "Wants", "Shopping",                  "Clothing",                    "", false],
+        ["01/19/2025", 45.00,   "Wants", "Streaming Services",        "Netflix, Hulu, Spotify",      "", false],
+        ["01/23/2025", 75.00,   "Wants", "Personal Care",             "Haircut + products",          "", false],
+        ["01/28/2025", 40.00,   "Wants", "Gym Membership",            "Monthly gym",                 "", false],
+        ["01/01/2025", 500.00,  "Savings & Debt", "Emergency Fund",         "Automatic transfer",    "", false],
+        ["01/01/2025", 320.00,  "Savings & Debt", "Retirement (401k/IRA)",  "Roth IRA contribution", "", false],
+        ["01/01/2025", 150.00,  "Savings & Debt", "Extra Debt Payment",     "Chase Visa extra",      "", false],
+        ["02/01/2025", 1450.00, "Needs", "Rent/Mortgage",            "",                            "", false],
+        ["02/03/2025", 105.00,  "Needs", "Utilities",                 "Lower bill",                  "", false],
+        ["02/07/2025", 360.00,  "Needs", "Groceries",                 "",                            "", false],
+        ["02/09/2025", 90.00,   "Needs", "Transportation",            "",                            "", false],
+        ["02/10/2025", 140.00,  "Needs", "Insurance",                 "",                            "", false],
+        ["02/12/2025", 45.00,   "Needs", "Phone",                     "",                            "", false],
+        ["02/15/2025", 65.00,   "Needs", "Internet",                  "",                            "", false],
+        ["02/14/2025", 180.00,  "Wants", "Dining Out",                "Valentine's dinner",          "", false],
+        ["02/18/2025", 85.00,   "Wants", "Shopping",                  "",                            "", false],
+        ["02/20/2025", 45.00,   "Wants", "Streaming Services",        "",                            "", false],
+        ["02/22/2025", 75.00,   "Wants", "Personal Care",             "",                            "", false],
+        ["02/01/2025", 500.00,  "Savings & Debt", "Emergency Fund",         "",                      "", false],
+        ["02/01/2025", 320.00,  "Savings & Debt", "Retirement (401k/IRA)",  "",                      "", false],
+        ["03/01/2025", 1450.00, "Needs", "Rent/Mortgage",            "",                            "", false],
+        ["03/04/2025", 115.00,  "Needs", "Utilities",                 "",                            "", false],
+        ["03/06/2025", 395.00,  "Needs", "Groceries",                 "",                            "", false],
+        ["03/08/2025", 95.00,   "Needs", "Transportation",            "",                            "", false],
+        ["03/10/2025", 140.00,  "Needs", "Insurance",                 "",                            "", false],
+        ["03/12/2025", 45.00,   "Needs", "Phone",                     "",                            "", false],
+        ["03/15/2025", 65.00,   "Needs", "Internet",                  "",                            "", false],
+        ["03/10/2025", 220.00,  "Wants", "Dining Out",                "St. Patrick's Day outings",   "", false],
+        ["03/15/2025", 195.00,  "Wants", "Shopping",                  "Spring wardrobe",             "", false],
+        ["03/18/2025", 110.00,  "Wants", "Travel",                    "Weekend trip deposit",        "", false],
+        ["03/22/2025", 45.00,   "Wants", "Streaming Services",        "",                            "", false],
+        ["03/25/2025", 80.00,   "Wants", "Hobbies",                   "",                            "", false],
+        ["03/01/2025", 500.00,  "Savings & Debt", "Emergency Fund",         "",                      "", false],
+        ["03/01/2025", 320.00,  "Savings & Debt", "Retirement (401k/IRA)",  "",                      "", false]
+      ]
+    },
+
+    {
+      "range": "Debt Tracker!A1:K1",
+      "values": [["Creditor", "Balance", "Interest Rate", "Min Payment", "Extra Payment", "Total Monthly", "Months to Payoff", "Payoff Date", "Interest Cost", "Progress", "Original Balance"]]
+    },
+    {
+      "range": "Debt Tracker!A2:K5",
+      "values": [
+        ["Chase Visa",   4200.00,  0.2199, 105.00, 150.00,
+          "=D2+E2",
+          "=IFERROR(ROUND(NPER(C2/12,-F2,B2),0),\"∞\")",
+          "=IFERROR(TEXT(EDATE(TODAY(),G2),\"MMM YYYY\"),\"N/A\")",
+          "=IFERROR((F2*G2)-B2,0)",
+          "=IFERROR(REPT(\"█\",ROUND((1-(B2/K2))*20,0))&REPT(\"░\",20-ROUND((1-(B2/K2))*20,0)),REPT(\"░\",20))",
+          5500.00],
+        ["Student Loan", 18500.00, 0.0499, 195.00, 50.00,
+          "=D3+E3",
+          "=IFERROR(ROUND(NPER(C3/12,-F3,B3),0),\"∞\")",
+          "=IFERROR(TEXT(EDATE(TODAY(),G3),\"MMM YYYY\"),\"N/A\")",
+          "=IFERROR((F3*G3)-B3,0)",
+          "=IFERROR(REPT(\"█\",ROUND((1-(B3/K3))*20,0))&REPT(\"░\",20-ROUND((1-(B3/K3))*20,0)),REPT(\"░\",20))",
+          22000.00],
+        ["Car Loan",     9800.00,  0.0649, 210.00, 0.00,
+          "=D4+E4",
+          "=IFERROR(ROUND(NPER(C4/12,-F4,B4),0),\"∞\")",
+          "=IFERROR(TEXT(EDATE(TODAY(),G4),\"MMM YYYY\"),\"N/A\")",
+          "=IFERROR((F4*G4)-B4,0)",
+          "=IFERROR(REPT(\"█\",ROUND((1-(B4/K4))*20,0))&REPT(\"░\",20-ROUND((1-(B4/K4))*20,0)),REPT(\"░\",20))",
+          12000.00],
+        ["Medical Bill", 1100.00,  0.0001, 92.00,  100.00,
+          "=D5+E5",
+          "=IFERROR(ROUND(NPER(C5/12,-F5,B5),0),\"∞\")",
+          "=IFERROR(TEXT(EDATE(TODAY(),G5),\"MMM YYYY\"),\"N/A\")",
+          "=IFERROR((F5*G5)-B5,0)",
+          "=IFERROR(REPT(\"█\",ROUND((1-(B5/K5))*20,0))&REPT(\"░\",20-ROUND((1-(B5/K5))*20,0)),REPT(\"░\",20))",
+          1100.00]
+      ]
+    },
+    {
+      "range": "Debt Tracker!A7:I7",
+      "values": [["TOTALS", "=SUM(B2:B5)", "", "=SUM(D2:D5)", "=SUM(E2:E5)", "=SUM(F2:F5)", "", "", "=SUM(I2:I5)"]]
+    },
+
+    {
+      "range": "Sinking Funds!A1:I1",
+      "values": [["Fund Name", "Target Amount", "Monthly Contribution", "Amount Saved", "% Complete", "Months Remaining", "Target Date", "Progress Bar", "Status"]]
+    },
+    {
+      "range": "Sinking Funds!A2:I6",
+      "values": [
+        ["Emergency Fund (6mo)", 12000.00, 500.00, 4500.00,
+          "=IFERROR(D2/B2,0)",
+          "=IFERROR(CEILING((B2-D2)/C2,1),0)",
+          "=IFERROR(TEXT(EDATE(TODAY(),F2),\"MMM YYYY\"),\"Funded!\")",
+          "=IFERROR(REPT(\"█\",ROUND(E2*20,0))&REPT(\"░\",20-ROUND(E2*20,0)),REPT(\"░\",20))",
+          "=IF(E2>=1,\"✅ Funded!\",IF(E2>=0.75,\"🟢 On Track\",IF(E2>=0.5,\"🟡 Halfway\",\"🔴 Behind\")))"
+        ],
+        ["Vacation", 2500.00, 200.00, 800.00,
+          "=IFERROR(D3/B3,0)",
+          "=IFERROR(CEILING((B3-D3)/C3,1),0)",
+          "=IFERROR(TEXT(EDATE(TODAY(),F3),\"MMM YYYY\"),\"Funded!\")",
+          "=IFERROR(REPT(\"█\",ROUND(E3*20,0))&REPT(\"░\",20-ROUND(E3*20,0)),REPT(\"░\",20))",
+          "=IF(E3>=1,\"✅ Funded!\",IF(E3>=0.75,\"🟢 On Track\",IF(E3>=0.5,\"🟡 Halfway\",\"🔴 Behind\")))"
+        ],
+        ["Car Maintenance", 1200.00, 100.00, 650.00,
+          "=IFERROR(D4/B4,0)",
+          "=IFERROR(CEILING((B4-D4)/C4,1),0)",
+          "=IFERROR(TEXT(EDATE(TODAY(),F4),\"MMM YYYY\"),\"Funded!\")",
+          "=IFERROR(REPT(\"█\",ROUND(E4*20,0))&REPT(\"░\",20-ROUND(E4*20,0)),REPT(\"░\",20))",
+          "=IF(E4>=1,\"✅ Funded!\",IF(E4>=0.75,\"🟢 On Track\",IF(E4>=0.5,\"🟡 Halfway\",\"🔴 Behind\")))"
+        ],
+        ["Holiday Gifts", 800.00, 65.00, 130.00,
+          "=IFERROR(D5/B5,0)",
+          "=IFERROR(CEILING((B5-D5)/C5,1),0)",
+          "=IFERROR(TEXT(EDATE(TODAY(),F5),\"MMM YYYY\"),\"Funded!\")",
+          "=IFERROR(REPT(\"█\",ROUND(E5*20,0))&REPT(\"░\",20-ROUND(E5*20,0)),REPT(\"░\",20))",
+          "=IF(E5>=1,\"✅ Funded!\",IF(E5>=0.75,\"🟢 On Track\",IF(E5>=0.5,\"🟡 Halfway\",\"🔴 Behind\")))"
+        ],
+        ["New Laptop", 1500.00, 125.00, 375.00,
+          "=IFERROR(D6/B6,0)",
+          "=IFERROR(CEILING((B6-D6)/C6,1),0)",
+          "=IFERROR(TEXT(EDATE(TODAY(),F6),\"MMM YYYY\"),\"Funded!\")",
+          "=IFERROR(REPT(\"█\",ROUND(E6*20,0))&REPT(\"░\",20-ROUND(E6*20,0)),REPT(\"░\",20))",
+          "=IF(E6>=1,\"✅ Funded!\",IF(E6>=0.75,\"🟢 On Track\",IF(E6>=0.5,\"🟡 Halfway\",\"🔴 Behind\")))"
+        ]
+      ]
+    },
+
+    {
+      "range": "Dashboard!A1",
+      "values": [["50/30/20 BUDGET DASHBOARD"]]
+    },
+    {
+      "range": "Dashboard!A2:H2",
+      "values": [[
+        "BUDGET PERIOD",
+        "Jan 2025",
+        "",
+        "NET CURRENCY",
+        "USD",
+        "",
+        "DATE RANGE",
+        "=IFERROR(TEXT(DATE(VALUE(RIGHT(B2,4)),MATCH(LEFT(B2,3),{\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\"},0),1),\"MM/DD/YYYY\")&\" – \"&TEXT(EOMONTH(DATE(VALUE(RIGHT(B2,4)),MATCH(LEFT(B2,3),{\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\"},0),1),0),\"MM/DD/YYYY\"),\"\")"
+      ]]
+    },
+    {
+      "range": "Dashboard!A4",
+      "values": [["NEEDS"]]
+    },
+    {
+      "range": "Dashboard!E4",
+      "values": [["WANTS"]]
+    },
+    {
+      "range": "Dashboard!I4",
+      "values": [["SAVINGS & DEBT"]]
+    },
+    {
+      "range": "Dashboard!A5",
+      "values": [["=IFERROR(TEXT(SUMIFS('Expense Log'!C:C,'Expense Log'!D:D,\"Needs\",'Expense Log'!G:G,B2),\"$#,##0.00\"),\"$0.00\")"]]
+    },
+    {
+      "range": "Dashboard!E5",
+      "values": [["=IFERROR(TEXT(SUMIFS('Expense Log'!C:C,'Expense Log'!D:D,\"Wants\",'Expense Log'!G:G,B2),\"$#,##0.00\"),\"$0.00\")"]]
+    },
+    {
+      "range": "Dashboard!I5",
+      "values": [["=IFERROR(TEXT(SUMIFS('Expense Log'!C:C,'Expense Log'!D:D,\"Savings & Debt\",'Expense Log'!G:G,B2),\"$#,##0.00\"),\"$0.00\")"]]
+    },
+    {
+      "range": "Dashboard!A7",
+      "values": [["CASH FLOW SUMMARY"]]
+    },
+    {
+      "range": "Dashboard!G7",
+      "values": [["ACTUAL ALLOCATION SUMMARY"]]
+    },
+    {
+      "range": "Dashboard!A8:B12",
+      "values": [
+        ["Income",         "=IFERROR(SUMIFS('Income Log'!C:C,'Income Log'!E:E,B2),0)"],
+        ["Needs",          "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!D:D,\"Needs\",'Expense Log'!G:G,B2),0)"],
+        ["Wants",          "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!D:D,\"Wants\",'Expense Log'!G:G,B2),0)"],
+        ["Savings & Debt", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!D:D,\"Savings & Debt\",'Expense Log'!G:G,B2),0)"],
+        ["Remaining",      "=B8-B9-B10-B11"]
+      ]
+    },
+    {
+      "range": "Dashboard!G8:H10",
+      "values": [
+        ["Savings & Debt", "=IFERROR(B11/B8,0)"],
+        ["Needs",          "=IFERROR(B9/B8,0)"],
+        ["Wants",          "=IFERROR(B10/B8,0)"]
+      ]
+    },
+    {
+      "range": "Dashboard!A14",
+      "values": [["AMOUNT LEFT TO SPEND"]]
+    },
+    {
+      "range": "Dashboard!A15",
+      "values": [["=TEXT(B12,\"$#,##0.00\")"]]
+    },
+    {
+      "range": "Dashboard!E14",
+      "values": [["% INCOME SPENT"]]
+    },
+    {
+      "range": "Dashboard!E15",
+      "values": [["=IFERROR(1-(B12/B8),0)"]]
+    },
+    {
+      "range": "Dashboard!A17",
+      "values": [["NEEDS SUMMARY"]]
+    },
+    {
+      "range": "Dashboard!A18:D18",
+      "values": [["Category", "Expected", "Actual", "Progress"]]
+    },
+    {
+      "range": "Dashboard!A19:D30",
+      "values": [
+        ["Rent/Mortgage",            "=Reference!$G$1*$B$8*0.40", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A19,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C19/B19*10,0),10)),\"\")"],
+        ["Utilities",                "=Reference!$G$1*$B$8*0.05", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A20,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C20/B20*10,0),10)),\"\")"],
+        ["Groceries",                "=Reference!$G$1*$B$8*0.15", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A21,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C21/B21*10,0),10)),\"\")"],
+        ["Transportation",           "=Reference!$G$1*$B$8*0.08", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A22,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C22/B22*10,0),10)),\"\")"],
+        ["Insurance",                "=Reference!$G$1*$B$8*0.07", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A23,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C23/B23*10,0),10)),\"\")"],
+        ["Phone",                    "=Reference!$G$1*$B$8*0.03", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A24,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C24/B24*10,0),10)),\"\")"],
+        ["Internet",                 "=Reference!$G$1*$B$8*0.04", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A25,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C25/B25*10,0),10)),\"\")"],
+        ["Medical",                  "=Reference!$G$1*$B$8*0.05", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A26,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C26/B26*10,0),10)),\"\")"],
+        ["Childcare",                "=Reference!$G$1*$B$8*0.05", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A27,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C27/B27*10,0),10)),\"\")"],
+        ["Subscriptions (Essential)", "=Reference!$G$1*$B$8*0.02", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A28,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C28/B28*10,0),10)),\"\")"],
+        ["Minimum Debt Payments",    "=Reference!$G$1*$B$8*0.04", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A29,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C29/B29*10,0),10)),\"\")"],
+        ["Other Needs",              "=Reference!$G$1*$B$8*0.02", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,A30,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(C30/B30*10,0),10)),\"\")"]
+      ]
+    },
+    {
+      "range": "Dashboard!F17",
+      "values": [["WANTS SUMMARY"]]
+    },
+    {
+      "range": "Dashboard!F18:I18",
+      "values": [["Category", "Expected", "Actual", "Progress"]]
+    },
+    {
+      "range": "Dashboard!F19:I30",
+      "values": [
+        ["Dining Out",                    "=Reference!$G$2*$B$8*0.25", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F19,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H19/G19*10,0),10)),\"\")"],
+        ["Entertainment",                 "=Reference!$G$2*$B$8*0.10", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F20,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H20/G20*10,0),10)),\"\")"],
+        ["Shopping",                      "=Reference!$G$2*$B$8*0.20", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F21,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H21/G21*10,0),10)),\"\")"],
+        ["Personal Care",                 "=Reference!$G$2*$B$8*0.08", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F22,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H22/G22*10,0),10)),\"\")"],
+        ["Travel",                        "=Reference!$G$2*$B$8*0.10", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F23,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H23/G23*10,0),10)),\"\")"],
+        ["Hobbies",                       "=Reference!$G$2*$B$8*0.05", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F24,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H24/G24*10,0),10)),\"\")"],
+        ["Subscriptions (Non-Essential)", "=Reference!$G$2*$B$8*0.05", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F25,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H25/G25*10,0),10)),\"\")"],
+        ["Gifts",                         "=Reference!$G$2*$B$8*0.03", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F26,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H26/G26*10,0),10)),\"\")"],
+        ["Gym Membership",                "=Reference!$G$2*$B$8*0.04", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F27,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H27/G27*10,0),10)),\"\")"],
+        ["Streaming Services",            "=Reference!$G$2*$B$8*0.05", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F28,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H28/G28*10,0),10)),\"\")"],
+        ["Alcohol/Bars",                  "=Reference!$G$2*$B$8*0.03", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F29,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H29/G29*10,0),10)),\"\")"],
+        ["Other Wants",                   "=Reference!$G$2*$B$8*0.02", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,F30,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(H30/G30*10,0),10)),\"\")"]
+      ]
+    },
+    {
+      "range": "Dashboard!K17",
+      "values": [["SAVINGS & DEBT SUMMARY"]]
+    },
+    {
+      "range": "Dashboard!K18:N18",
+      "values": [["Category", "Expected", "Actual", "Progress"]]
+    },
+    {
+      "range": "Dashboard!K19:N25",
+      "values": [
+        ["Emergency Fund",            "=Reference!$G$3*$B$8*0.30", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,K19,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(M19/L19*10,0),10)),\"\")"],
+        ["Retirement (401k/IRA)",     "=Reference!$G$3*$B$8*0.30", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,K20,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(M20/L20*10,0),10)),\"\")"],
+        ["Sinking Fund Contribution", "=Reference!$G$3*$B$8*0.10", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,K21,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(M21/L21*10,0),10)),\"\")"],
+        ["Extra Debt Payment",        "=Reference!$G$3*$B$8*0.15", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,K22,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(M22/L22*10,0),10)),\"\")"],
+        ["Investment",                "=Reference!$G$3*$B$8*0.10", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,K23,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(M23/L23*10,0),10)),\"\")"],
+        ["Savings Account",           "=Reference!$G$3*$B$8*0.03", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,K24,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(M24/L24*10,0),10)),\"\")"],
+        ["Other Savings",             "=Reference!$G$3*$B$8*0.02", "=IFERROR(SUMIFS('Expense Log'!C:C,'Expense Log'!E:E,K25,'Expense Log'!G:G,$B$2),0)", "=IFERROR(REPT(\"█\",MIN(ROUND(M25/L25*10,0),10)),\"\")"]
+      ]
+    }
+  ]
+}

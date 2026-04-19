@@ -1,0 +1,50 @@
+{
+  "properties": {
+    "title": "50/30/20 Budget Tracker",
+    "locale": "en_US"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 0,
+        "title": "Dashboard",
+        "gridProperties": { "rowCount": 50, "columnCount": 14 }
+      }
+    },
+    {
+      "properties": {
+        "sheetId": 1,
+        "title": "Expense Log",
+        "gridProperties": { "rowCount": 200, "columnCount": 8, "frozenRowCount": 1 }
+      }
+    },
+    {
+      "properties": {
+        "sheetId": 2,
+        "title": "Income Log",
+        "gridProperties": { "rowCount": 100, "columnCount": 6, "frozenRowCount": 1 }
+      }
+    },
+    {
+      "properties": {
+        "sheetId": 3,
+        "title": "Debt Tracker",
+        "gridProperties": { "rowCount": 20, "columnCount": 11, "frozenRowCount": 1 }
+      }
+    },
+    {
+      "properties": {
+        "sheetId": 4,
+        "title": "Sinking Funds",
+        "gridProperties": { "rowCount": 30, "columnCount": 9, "frozenRowCount": 1 }
+      }
+    },
+    {
+      "properties": {
+        "sheetId": 5,
+        "title": "Reference",
+        "gridProperties": { "rowCount": 20, "columnCount": 10 }
+      }
+    }
+  ]
+}
