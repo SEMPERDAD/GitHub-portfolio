@@ -1,6 +1,15 @@
-# 50/30/20 Budget Tracker — gws CLI Build
+# 50/30/20 Budget Tracker
 
-End-to-end build of a Google Sheets personal finance dashboard using the [`gws`](https://github.com/googleworkspace/cli) CLI.
+End-to-end build of a Google Sheets personal finance dashboard. Two build paths:
+
+- **[`apps-script/`](./apps-script/)** — Google Apps Script version. No CLI, no Cloud Console, no OAuth client. Paste one script in <https://script.google.com>, click Run. ~5 minutes of clicking. **Recommended for most users.**
+- **[`build.sh`](./build.sh)** — original `gws` CLI version, described below. Faster for repeat builds if you already have `gws` and `jq` installed.
+
+Both produce the identical spreadsheet — same tabs, same formulas, same design.
+
+---
+
+## Path B: `gws` CLI Build
 
 ## What this builds
 
